@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111827" />
+  <title>SHAPE DO CHICÃO</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <p class="tag">App pessoal aberto</p>
+        <h1>SHAPE DO CHICÃO</h1>
+        <p>Treino, dieta, metas e evolução gerados automaticamente conforme seu objetivo.</p>
+      </div>
+      <div class="score-card">
+        <span id="dailyScore">0</span>
+        <small>pontos hoje</small>
+      </div>
+    </section>
+
+    <section class="card profile-card">
+      <h2>Monte seu plano</h2>
+      <div class="grid form-grid">
+        <label>Nome
+          <input id="nome" placeholder="Ex.: Adryano" />
+        </label>
+        <label>Idade
+          <input id="idade" type="number" placeholder="36" />
+        </label>
+        <label>Peso atual (kg)
+          <input id="peso" type="number" step="0.1" placeholder="83" />
+        </label>
+        <label>Altura (cm)
+          <input id="altura" type="number" placeholder="168" />
+        </label>
+        <label>Objetivo
+          <select id="objetivo">
+            <option value="emagrecimento">Perda de peso</option>
+            <option value="hipertrofia">Hipertrofia</option>
+            <option value="manutencao">Manutenção</option>
+          </select>
+        </label>
+        <label>Nível
+          <select id="nivel">
+            <option value="iniciante">Iniciante</option>
+            <option value="intermediario">Intermediário</option>
+            <option value="avancado">Avançado</option>
+          </select>
+        </label>
+      </div>
+      <button id="gerarPlano">Gerar plano personalizado</button>
+      <button class="secondary" id="limparDados">Limpar dados deste aparelho</button>
+    </section>
+
+    <section id="resultado" class="hidden">
+      <div class="welcome">
+        <h2 id="saudacao"></h2>
+        <p id="resumoObjetivo"></p>
+      </div>
+
+      <div class="metrics" id="metricas"></div>
+
+      <section class="card">
+        <h2>Checklist de hoje</h2>
+        <div class="checks">
+          <label><input type="checkbox" class="check" data-pontos="30" /> Treino realizado</label>
+          <label><input type="checkbox" class="check" data-pontos="30" /> Dieta cumprida</label>
+          <label><input type="checkbox" class="check" data-pontos="15" /> Água batida</label>
+          <label><input type="checkbox" class="check" data-pontos="15" /> Sono adequado</label>
+          <label><input type="checkbox" class="check" data-pontos="10" /> Peso registrado</label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Treino personalizado</h2>
+        <div class="tabs">
+          <button class="tab active" data-tab="treino">Plano</button>
+          <button class="tab" data-tab="dieta">Dieta</button>
+          <button class="tab" data-tab="dicas">Dicas</button>
+          <button class="tab" data-tab="evolucao">Evolução</button>
+        </div>
+        <div id="treino" class="tab-content"></div>
+        <div id="dieta" class="tab-content hidden"></div>
+        <div id="dicas" class="tab-content hidden"></div>
+        <div id="evolucao" class="tab-content hidden"></div>
+      </section>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
