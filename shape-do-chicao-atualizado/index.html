@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Shape do Chicão">
+  <link rel="manifest" href="manifest.json">
+  <title>Shape do Chicão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="badge">PWA • iPhone • Foto IA pronta</div>
+    <h1>Shape do Chicão</h1>
+    <p>Treinos práticos para hipertrofia, emagrecimento, mobilidade, idosos e equilíbrio.</p>
+    <div class="notice">Conteúdo educativo. Pessoas com dor, lesão, doença neurológica, Parkinson ou limitação importante devem treinar com liberação médica e acompanhamento profissional.</div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Escolha seu perfil</h2>
+      <div class="chips" id="filters"></div>
+    </section>
+
+    <section class="grid" id="workoutGrid"></section>
+
+    <section class="panel camera-panel" id="foto">
+      <h2>Análise do shape por foto</h2>
+      <p>Envie ou tire uma foto atual. O app já faz uma leitura local segura da imagem e gera sugestão de treino conforme objetivo, perfil e nível. A foto não sai do aparelho nesta versão.</p>
+
+      <div class="privacy-box">
+        <b>Privacidade:</b> ao usar esta função, a foto é processada no próprio navegador. Para IA avançada com servidor/API, use HTTPS, consentimento e política de privacidade.
+      </div>
+
+      <label class="upload">
+        <input id="photoInput" type="file" accept="image/*" capture="user">
+        Tirar ou escolher foto
+      </label>
+      <img id="preview" alt="Prévia da foto" hidden>
+      <canvas id="photoCanvas" hidden></canvas>
+
+      <div class="form-row">
+        <select id="goal">
+          <option value="emagrecimento">Emagrecimento e condicionamento</option>
+          <option value="massa">Ganho de massa muscular</option>
+          <option value="gluteo">Foco em glúteos</option>
+          <option value="quadriceps">Foco em quadríceps</option>
+          <option value="posterior">Foco em posterior de coxa</option>
+          <option value="saude">Saúde, equilíbrio e mobilidade</option>
+        </select>
+        <select id="profile">
+          <option value="adulto">Adulto sem limitação importante</option>
+          <option value="iniciante">Iniciante</option>
+          <option value="idoso">Pessoa idosa</option>
+          <option value="equilibrio">Limitação de equilíbrio/Parkinson</option>
+        </select>
+        <button id="analyzeBtn">Analisar foto e sugerir treino</button>
+      </div>
+      <div id="analysis" class="analysis"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="#workoutGrid">Treinos</a>
+    <a href="#foto">Foto IA</a>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
